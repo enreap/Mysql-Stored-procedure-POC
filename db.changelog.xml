@@ -1,0 +1,87 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.21.xsd">
+
+    <!-- Create db1 and user -->
+    <changeSet id="001-create-database1" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS database1;
+            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
+            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'database1'@'%';
+            DROP DATABASE IF EXISTS database1;
+        </rollback>
+    </changeSet>
+
+    <!-- Create db2 and user -->
+    <changeSet id="002-create-database2" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS database2;
+            CREATE USER IF NOT EXISTS 'database2'@'%' IDENTIFIED BY 'Db2@12345';
+            GRANT ALL PRIVILEGES ON database2.* TO 'database2'@'%';
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'database2'@'%';
+            DROP DATABASE IF EXISTS database2;
+        </rollback>
+    </changeSet>
+
+    <!-- Execute external SQL for tables and initial data -->
+    <changeSet id="003-database1-tables" author="dev">
+        <sqlFile path="../sql/database1/create_tables.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="004-database2-tables" author="dev">
+        <sqlFile path="../sql/database2/create_tables.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <!-- Execute external SQL to update some table data -->
+    <changeSet id="005-database1-update-data" author="dev">
+        <sqlFile path="../sql/database1/update_data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="006-database2-update-data" author="dev">
+        <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+       <!-- Create db3 and user -->
+    <changeSet id="007-create-database3" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS database3;
+            CREATE USER IF NOT EXISTS 'database3'@'%' IDENTIFIED BY 'Db3@12345';
+            GRANT ALL PRIVILEGES ON database3.* TO 'database3'@'%';
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'database3'@'%';
+            DROP DATABASE IF EXISTS database3;
+        </rollback>
+     </changeSet>
+      
+     <changeSet id="008-database3-tables" author="dev">
+         <sqlFile path="../sql/database3/create_tables.sql" relativeToChangelogFile="true"/>
+     </changeSet>
+
+
+     <changeSet id="009-database3-update-data" author="dev">
+         <sqlFile path="../sql/database3/update_data.sql" relativeToChangelogFile="true"/>
+     </changeSet> 
+       <!-- Create db4 and user -->
+    <changeSet id="010-create-database4" author="dev">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS database4;
+            CREATE USER IF NOT EXISTS 'database4'@'%' IDENTIFIED BY 'Db4@12345';
+            GRANT ALL PRIVILEGES ON database4.* TO 'database4'@'%';
+            FLUSH PRIVILEGES;
+        </sql>
+        <rollback>
+            DROP USER IF EXISTS 'database4'@'%';
+            DROP DATABASE IF EXISTS database4;
+        </rollback>
+     </changeSet>  
+
+</databaseChangeLog>
