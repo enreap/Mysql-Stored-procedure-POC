@@ -7,12 +7,12 @@
     <changeSet id="001-create-database1" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS database1;
-            CREATE USER IF NOT EXISTS 'database1'@'%' IDENTIFIED BY 'Db1@12345';
-            GRANT ALL PRIVILEGES ON database1.* TO 'database1'@'%';
+            CREATE USER IF NOT EXISTS 'Babu'@'%' IDENTIFIED BY 'Babu@12345';
+            GRANT ALL PRIVILEGES ON database1.* TO 'Babu'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'database1'@'%';
+            DROP USER IF EXISTS 'Babu'@'%';
             DROP DATABASE IF EXISTS database1;
         </rollback>
     </changeSet>
@@ -21,12 +21,12 @@
     <changeSet id="002-create-database2" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS database2;
-            CREATE USER IF NOT EXISTS 'database2'@'%' IDENTIFIED BY 'Db2@12345';
-            GRANT ALL PRIVILEGES ON database2.* TO 'database2'@'%';
+            CREATE USER IF NOT EXISTS 'Dasari'@'%' IDENTIFIED BY 'Dasari@12345';
+            GRANT ALL PRIVILEGES ON database2.* TO 'Dasari'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'database2'@'%';
+            DROP USER IF EXISTS 'Dasari'@'%';
             DROP DATABASE IF EXISTS database2;
         </rollback>
     </changeSet>
