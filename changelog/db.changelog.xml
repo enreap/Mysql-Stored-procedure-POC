@@ -49,39 +49,26 @@
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
        <!-- Create db3 and user -->
-    <changeSet id="007-create-database3" author="dev">
+    <!-- <changeSet id="007-create-grafterrdb" author="dev">
         <sql>
-            CREATE DATABASE IF NOT EXISTS database3;
-            CREATE USER IF NOT EXISTS 'database3'@'%' IDENTIFIED BY 'Db3@12345';
-            GRANT ALL PRIVILEGES ON database3.* TO 'database3'@'%';
+            CREATE DATABASE IF NOT EXISTS grafterrdb;
+            CREATE USER IF NOT EXISTS 'grafterruser'@'%' IDENTIFIED BY 'Grafterr@12345';
+            GRANT ALL PRIVILEGES ON grafterrdb.* TO 'grafterruser'@'%';
             FLUSH PRIVILEGES;
         </sql>
         <rollback>
-            DROP USER IF EXISTS 'database3'@'%';
-            DROP DATABASE IF EXISTS database3;
+            DROP USER IF EXISTS 'grafterruser'@'%';
+            DROP DATABASE IF EXISTS grafterrdb;
         </rollback>
      </changeSet>
       
-     <changeSet id="008-database3-tables" author="dev">
-         <sqlFile path="../sql/database3/create_tables.sql" relativeToChangelogFile="true"/>
+     <changeSet id="008-grafterrdb-tables" author="dev">
+         <sqlFile path="../sql/grafterrdb/create_tables.sql" relativeToChangelogFile="true"/>
      </changeSet>
 
 
-     <changeSet id="009-database3-update-data" author="dev">
-         <sqlFile path="../sql/database3/update_data.sql" relativeToChangelogFile="true"/>
-     </changeSet> 
-       <!-- Create db4 and user -->
-    <changeSet id="010-create-database4" author="dev">
-        <sql>
-            CREATE DATABASE IF NOT EXISTS database4;
-            CREATE USER IF NOT EXISTS 'database4'@'%' IDENTIFIED BY 'Db4@12345';
-            GRANT ALL PRIVILEGES ON database4.* TO 'database4'@'%';
-            FLUSH PRIVILEGES;
-        </sql>
-        <rollback>
-            DROP USER IF EXISTS 'database4'@'%';
-            DROP DATABASE IF EXISTS database4;
-        </rollback>
-     </changeSet>  
+     <changeSet id="009-grafterrdb-update-data" author="dev">
+         <sqlFile path="../sql/grafterrdb/update_data.sql" relativeToChangelogFile="true"/>
+     </changeSet>   -->
 
 </databaseChangeLog>
