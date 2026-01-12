@@ -36,17 +36,12 @@ This project uses Liquibase for database version control and MySQL as the databa
 mysql -u root -p -e "CREATE DATABASE mydatabase;"
 Run Liquibase:
 
-bash
-Copy code
+
 liquibase --defaultsFile=liquibase.properties update
 Jenkins will run the pipeline automatically for CI/CD.
 
-yaml
-Copy code
 
----
-
-✅ **Key Features of This GitHub Project**
+**Key Features of This GitHub Project**
 
 - Fully version-controlled using **Liquibase XML changelogs**.  
 - Stored procedures work correctly via Liquibase (no DELIMITER needed).  
@@ -55,8 +50,3 @@ Copy code
 - Jenkins CI/CD pipeline ready.  
 - Clean, maintainable structure for users, tables, and procedures.  
 
----
-
-If you want, I can also **give a ready-to-push GitHub zip** including all these files, so you just unzip and push.  
-
-Do you want me to prepare that zip?
