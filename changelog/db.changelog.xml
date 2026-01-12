@@ -64,6 +64,11 @@
       
      <changeSet id="008-grafterrdb-tables" author="dev">
          <sqlFile path="../sql/grafterrdb/create_tables.sql" relativeToChangelogFile="true"/>
+         <rollback>
+                -- Drop all tables created in create_tables.sql
+             DROP TABLE IF EXISTS users;
+               -- Add all tables you created
+         </rollback>
      </changeSet>
 
 
