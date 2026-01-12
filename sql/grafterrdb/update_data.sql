@@ -1,5 +1,5 @@
 USE grafterrdb;
 
-UPDATE users
+UPDATE grafterrtable
 SET email = CONCAT('new_', email)
 WHERE username = 'ketki';
