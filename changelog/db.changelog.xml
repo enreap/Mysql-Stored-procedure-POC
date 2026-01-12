@@ -48,8 +48,8 @@
     <changeSet id="006-database2-update-data" author="dev">
         <sqlFile path="../sql/database2/update_data.sql" relativeToChangelogFile="true"/>
     </changeSet>
-       <!-- Create db3 and user -->
-    <!-- <changeSet id="007-create-grafterrdb" author="dev">
+       <!-- Create grafterrdb and grafterruser -->
+    <changeSet id="007-create-grafterrdb" author="dev">
         <sql>
             CREATE DATABASE IF NOT EXISTS grafterrdb;
             CREATE USER IF NOT EXISTS 'grafterruser'@'%' IDENTIFIED BY 'Grafterr@12345';
@@ -69,6 +69,6 @@
 
      <changeSet id="009-grafterrdb-update-data" author="dev">
          <sqlFile path="../sql/grafterrdb/update_data.sql" relativeToChangelogFile="true"/>
-     </changeSet>   -->
+     </changeSet>  
 
 </databaseChangeLog>
