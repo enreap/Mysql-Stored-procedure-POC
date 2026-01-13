@@ -66,7 +66,7 @@
          <sqlFile path="../sql/grafterrdb/create_tables.sql" relativeToChangelogFile="true"/>
          <rollback>
              <sql>
-                 DROP TABLE grafterrtable CASCADE;
+                 DROP TABLE IF EXISTS grafterdb.grafterrtable;
              </sql>         
          </rollback> 
      </changeSet>
