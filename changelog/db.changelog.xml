@@ -65,7 +65,9 @@
      <changeSet id="008-grafterrdb-tables" author="dev">
          <sqlFile path="../sql/grafterrdb/create_tables.sql" relativeToChangelogFile="true"/>
          <rollback>
-             <dropTable tableName="grafterrtable"/>
+             <sql>
+                 DROP TABLE grafterrtable CASCADE;
+             </sql>         
          </rollback> 
      </changeSet>
 
