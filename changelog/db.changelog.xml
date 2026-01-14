@@ -64,11 +64,6 @@
       
      <changeSet id="008-grafterrdb-tables" author="dev">
          <sqlFile path="../sql/grafterrdb/create_tables.sql" relativeToChangelogFile="true"/>
-         <rollback>
-             <sql>
-                 DROP TABLE IF EXISTS grafterdb.grafterrtable;
-             </sql>         
-         </rollback> 
      </changeSet>
 
 
